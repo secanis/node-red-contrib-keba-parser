@@ -6,6 +6,10 @@
     "scripts": {
         "test": "mocha \"test/**/*.spec.js\""
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/secanis/red-contrib-keba-parser.git"
+    },
     "keywords": [
         "keba",
         "parser",

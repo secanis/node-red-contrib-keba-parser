@@ -1,10 +1,12 @@
-# node-red-contrib-keba-parser
+## node-red-contrib-keba-parser
+
+[![NPM](https://nodei.co/npm/red-contrib-keba-parser.png?compact=true)](https://npmjs.org/package/red-contrib-keba-parser)
 
 Node Red extension to parse the current data from the KEBA web ui.
 
 ![Keba Parser](https://raw.githubusercontent.com/secanis/red-contrib-keba-parser/main/images/screenshot-keba-parser.jpg)
 
-## Configuration
+### Configuration
 
 This node requires two properties for configuration
 
@@ -13,7 +15,7 @@ url             KEBA url of the charging station web ui
 interval        Interval to fetch data in seconds (default: 60 seconds)
 ```
 
-## Output Example Data
+### Output Example Data
 
 ```json
 {
