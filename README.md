@@ -2,7 +2,10 @@
 
 [![NPM](https://nodei.co/npm/red-contrib-keba-parser.png?compact=true)](https://npmjs.org/package/red-contrib-keba-parser)
 
-Node Red extension to parse the current data from the KEBA web ui.
+This is a node-red extension to parse the current state over the web ui from [KEBA E-Car charing stations](https://www.keba.com).
+The most of KEBA charing stations have an ethernet port to bring management and monitoring features to the charging station.
+With this node-red plugin you should be able to parse the available charing station monitoring web page to JSON.
+This is currently required because no full JSON REST API is available.
 
 ![Keba Parser](https://raw.githubusercontent.com/secanis/red-contrib-keba-parser/main/images/screenshot-keba-parser.jpg)
 
