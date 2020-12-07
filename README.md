@@ -22,7 +22,7 @@ interval        Interval to fetch data in seconds (default: 60 seconds)
 
 ### Output Example Data
 
-```json
+```jsonc
 {
     "title": "KeContact P30",
     "productId": "KC-P30-XYZ",
@@ -36,7 +36,7 @@ interval        Interval to fetch data in seconds (default: 60 seconds)
     "current": { "l1": 0, "l2": 0, "l3": 0 }, // in A
     "realPower": 10, // in kW
     "powerFactor": 0, // in %
-    "energySession": 0.00, // in kWh
+    "energySession": 0.0, // in kWh
     "energyTotal": 145.57, // in kWh
     "energyHousegrid": { "in": null, "out": null },
     "energySolar": { "in": null, "out": null }
