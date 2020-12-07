@@ -19,6 +19,7 @@ module.exports = (RED) => {
 function sendMessage(node, config) {
     parseKebaData(node, config, (payload) => {
         node.send({ payload });
+        node.status(getStatus(payload));
     });
 }
 
@@ -114,6 +115,24 @@ function keyMatcher(key, val) {
         default:
             return { key: val };
     }
+}
+
+function getStatus(payload) {
+    let statusColor = 'grey';
+
+    switch (payload.state) {
+        case 'unplugged':
+            statusColor = 'yellow';
+            break;
+        case 'plugged':
+            statusColor = 'blue';
+            break;
+        case 'charging':
+            statusColor = 'green';
+            break;
+    }
+
+    return { fill: statusColor, shape: 'dot', text: `${payload.state} - ${payload.realPower} kW` };
 }
 
 function numberParser(stringVal) {
