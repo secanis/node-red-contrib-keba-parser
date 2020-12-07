@@ -1,4 +1,4 @@
-## node-red-contrib-keba-parser
+# node-red-contrib-keba-parser
 
 [![NPM](https://nodei.co/npm/red-contrib-keba-parser.png?compact=true)](https://npmjs.org/package/red-contrib-keba-parser)
 
@@ -8,6 +8,8 @@ With this node-red plugin you should be able to parse the available charing stat
 This is currently required because no full JSON REST API is available.
 
 ![Keba Parser](https://raw.githubusercontent.com/secanis/red-contrib-keba-parser/main/images/screenshot-keba-parser.jpg)
+
+## Usage
 
 ### Configuration
 
@@ -29,14 +31,45 @@ interval        Interval to fetch data in seconds (default: 60 seconds)
     "serviceInfo": "0 : 0 : 0 : 0 : 0 : 888 : 88 : 888",
     "state": "unplugged ",
     "stateTime": { "rate": "seconds", "value": 10000 },
-    "limit": { "current": "0,00A", "pwm": "100,0%", "hardware": "32A" },
-    "voltage": { "l1": "0 V", "l2": "0 V", "l3": "0 V" },
-    "current": { "l1": "0,00 A", "l2": "0,00 A", "l3": "0,00 A" },
-    "realPower": "0,00 kW",
-    "powerFactor": "0,0 %",
-    "energySession": "0,00 kWh",
-    "energyTotal": "145,57 kWh",
+    "limit": { "current": 0, "pwm": 100.0, "hardware": 32 }, // in A, %, A
+    "voltage": { "l1": 0, "l2": 0, "l3": 0 }, // in V
+    "current": { "l1": 0, "l2": 0, "l3": 0 }, // in A
+    "realPower": 10, // in kW
+    "powerFactor": 0, // in %
+    "energySession": 0.00, // in kWh
+    "energyTotal": 145.57, // in kWh
     "energyHousegrid": { "in": null, "out": null },
     "energySolar": { "in": null, "out": null }
 }
 ```
+
+## Contribution
+
+### Prerequisites
+
+-   Installed Node
+-   Installed Docker for Desktop (or on Linux native Docker)
+
+### Development
+
+Start locally a Docker container with the following command:
+
+```powershell
+# careful this command is i.e. for Powershell
+docker run -it -p 1880:1880 -v ${PWD}:/usr/src/node-red/development --name mynodered nodered/node-red
+
+# cleanup
+docker kill mynodered
+docker rm mynodered
+```
+
+Then you can attatch your Visual Studio Code instance to the running container (official `Remote Docker` extension required).
+After that you can connect with the Powershell, shell, whatever to the running container by entering
+
+```powershell
+docker exec -it mynodered bash
+
+npm install ./development/
+```
+
+May you have to restart the container/Node-Red to see the plugin in over the Node-RED UI at `http://localhost:1880/`.
