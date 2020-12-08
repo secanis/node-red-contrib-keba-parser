@@ -130,6 +130,9 @@ function getStatus(payload) {
         case 'charging':
             statusColor = 'green';
             break;
+        case 'error':
+            statusColor = 'red';
+            break;
     }
 
     return { fill: statusColor, shape: 'dot', text: `${payload.state} - ${payload.realPower} kW` };
