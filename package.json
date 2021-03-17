@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/secanis/red-contrib-keba-parser.git"
+        "url": "https://github.com/secanis/node-red-contrib-keba-parser.git"
     },
     "keywords": [
         "keba",
