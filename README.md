@@ -9,6 +9,8 @@ This is currently required because no full JSON REST API is available.
 
 ![Keba Parser](https://raw.githubusercontent.com/secanis/red-contrib-keba-parser/main/images/screenshot-keba-parser.jpg)
 
+> Tested with the currently latest firmware version: P30 v3.10.28
+
 ## Usage
 
 ### Configuration
